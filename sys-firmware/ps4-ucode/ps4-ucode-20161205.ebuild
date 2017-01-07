@@ -6,7 +6,7 @@ EAPI=5
 
 inherit linux-info
 
-DESCRIPTION="Microcode for LiverpoolC.Islands/V.Islands/A.Islands Radeon GPUs and APUs"
+DESCRIPTION="Microcode for Liverpool APU"
 HOMEPAGE="https://people.freedesktop.org/~agd5f/radeon_ucode/"
 SRC_URI="mirror://gentoo/radeon-ucode-20160628.tar"
 
