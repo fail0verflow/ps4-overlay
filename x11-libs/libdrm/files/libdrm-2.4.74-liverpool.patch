@@ -1,0 +1,34 @@
+diff -urN libdrm-2.4.74-old/amdgpu/amdgpu_asic_id.h libdrm-2.4.74/amdgpu/amdgpu_asic_id.h
+--- libdrm-2.4.74-old/amdgpu/amdgpu_asic_id.h	2017-01-02 17:41:32.563295529 +0100
++++ libdrm-2.4.74/amdgpu/amdgpu_asic_id.h	2017-01-02 17:49:47.470931471 +0100
+@@ -159,6 +159,7 @@
+ 	{0x9874,	0x87,	"AMD Radeon R5 Graphics"},
+ 	{0x9874,	0x85,	"AMD Radeon R6 Graphics"},
+ 	{0x9874,	0x84,	"AMD Radeon R7 Graphics"},
++	{0x9920,	0x0,	"AMD Liverpool (PlayStation 4)"},
+ 
+ 	{0x0000,	0x0,	"\0"},
+ };
+diff -urN libdrm-2.4.74-old/radeon/r600_pci_ids.h libdrm-2.4.74/radeon/r600_pci_ids.h
+--- libdrm-2.4.74-old/radeon/r600_pci_ids.h	2017-01-02 17:41:32.548295669 +0100
++++ libdrm-2.4.74/radeon/r600_pci_ids.h	2017-01-02 17:41:41.121216578 +0100
+@@ -450,6 +450,8 @@
+ CHIPSET(0x985E, MULLINS_985E, MULLINS)
+ CHIPSET(0x985F, MULLINS_985F, MULLINS)
+ 
++CHIPSET(0x9920, LIVERPOOL_9920, LIVERPOOL)
++
+ CHIPSET(0x1304, KAVERI_1304, KAVERI)
+ CHIPSET(0x1305, KAVERI_1305, KAVERI)
+ CHIPSET(0x1306, KAVERI_1306, KAVERI)
+diff -urN libdrm-2.4.74-old/radeon/radeon_surface.c libdrm-2.4.74/radeon/radeon_surface.c
+--- libdrm-2.4.74-old/radeon/radeon_surface.c	2017-01-02 17:41:32.549295660 +0100
++++ libdrm-2.4.74/radeon/radeon_surface.c	2017-01-02 17:41:41.122216569 +0100
+@@ -90,6 +90,7 @@
+     CHIP_BONAIRE,
+     CHIP_KAVERI,
+     CHIP_KABINI,
++    CHIP_LIVERPOOL,
+     CHIP_HAWAII,
+     CHIP_MULLINS,
+     CHIP_LAST,
