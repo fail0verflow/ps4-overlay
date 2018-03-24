@@ -3,7 +3,7 @@
 
 EAPI=6
 
-: ${CMAKE_MAKEFILE_GENERATOR:=ninja}
+: ${CMAKE_MAKEFILE_GENERATOR:=emake}
 PYTHON_COMPAT=( python2_7 )
 
 inherit check-reqs cmake-utils eutils flag-o-matic multilib \
@@ -195,7 +195,7 @@ src_prepare() {
 
 	# Backport the fix for dlclose() causing option parser mess
 	# e.g. https://bugs.gentoo.org/617154
-	eapply "${FILESDIR}"/3.9.1-r1/0001-cmake-Pass-Wl-z-nodelete-on-Linux-to-prevent-unloadi.patch
+	eapply "${FILESDIR}"/3.9.1-r2/0001-cmake-Pass-Wl-z-nodelete-on-Linux-to-prevent-unloadi.patch
 
 
 	# support building llvm against musl-libc
